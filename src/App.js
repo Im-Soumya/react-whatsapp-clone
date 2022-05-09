@@ -1,20 +1,10 @@
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Login from "./components/Login";
-import Chats from './components/Chats';
-import {AuthProvider} from "./contexts/AuthContext";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <AuthProvider>
-          <Routes>
-            <Route path="/chats" element={<Chats />} />
-            <Route path="/" element={<Login />}/>
-          </Routes>
-        </AuthProvider>
-      </Router>
+      <Sidebar />
     </div>
   );
 }

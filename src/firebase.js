@@ -1,20 +1,18 @@
 import { initializeApp } from "firebase/app";
-import {getAuth, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBGr_dlVQr9AdwqOIwKNy_iW-0yb_2YtJw",
-  authDomain: "chat-app-dcee0.firebaseapp.com",
-  projectId: "chat-app-dcee0",
-  storageBucket: "chat-app-dcee0.appspot.com",
-  messagingSenderId: "147647023934",
-  appId: "1:147647023934:web:ee85fc0ca7eed6669c3a6f"
+  apiKey: "AIzaSyD6cO7NpK5L6ces9nsVN0nNbsSJ62M1qbE",
+  authDomain: "whatsapp-clone-7b03c.firebaseapp.com",
+  projectId: "whatsapp-clone-7b03c",
+  storageBucket: "whatsapp-clone-7b03c.appspot.com",
+  messagingSenderId: "713076805314",
+  appId: "1:713076805314:web:3d23d20e1fd7f7b09af55b"
 };
 
 const app = initializeApp(firebaseConfig);
 
+export const db = getFirestore(app);
 export const auth = getAuth(app);
-const provider = new GoogleAuthProvider()
-
-export const signInGoogle = () =>signInWithPopup(auth, provider);
-
- 
+export const provider = GoogleAuthProvider(auth);
